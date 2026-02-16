@@ -69,7 +69,7 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer> $salesOrderConfiguredBundleTransfers
+     * @param array<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer> $salesOrderConfiguredBundleTransfers
      *
      * @return void
      */
@@ -85,10 +85,10 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer> $salesOrderConfiguredBundleTransfers
-     * @param list<int> $salesOrderItemIds
+     * @param array<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer> $salesOrderConfiguredBundleTransfers
+     * @param array<int> $salesOrderItemIds
      *
-     * @return list<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer>
      */
     protected function executeUpdateSalesOrderConfiguredBundlesTransaction(
         array $salesOrderConfiguredBundleTransfers,
@@ -172,7 +172,7 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
     /**
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractSalesOrderItemIds(QuoteTransfer $quoteTransfer): array
     {

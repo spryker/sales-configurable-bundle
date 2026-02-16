@@ -40,14 +40,14 @@ interface SalesConfigurableBundleEntityManagerInterface
     ): SalesOrderConfiguredBundleItemTransfer;
 
     /**
-     * @param list<int> $salesOrderConfiguredBundleIds
+     * @param array<int> $salesOrderConfiguredBundleIds
      *
      * @return void
      */
     public function deleteSalesOrderConfiguredBundlesByIds(array $salesOrderConfiguredBundleIds): void;
 
     /**
-     * @param list<int> $salesOrderItemIds
+     * @param array<int> $salesOrderItemIds
      *
      * @return void
      */

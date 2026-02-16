@@ -41,9 +41,9 @@ class SalesConfigurableBundleRepository extends AbstractRepository implements Sa
     }
 
     /**
-     * @param list<int> $salesOrderItemIds
+     * @param array<int> $salesOrderItemIds
      *
-     * @return list<int>
+     * @return array<int>
      */
     public function getSalesOrderConfiguredBundleIdsBySalesOrderItemIds(array $salesOrderItemIds): array
     {
