@@ -42,9 +42,6 @@ class MergeConfigurableBundleProductsCartReorderItemsTest extends Unit
      */
     protected SalesConfigurableBundleBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testMergesConfigurableBundleItemsQuantity(): void
     {
         // Arrange
@@ -78,9 +75,6 @@ class MergeConfigurableBundleProductsCartReorderItemsTest extends Unit
         $this->assertSame(2, $orderItemTransfer->getSalesOrderConfiguredBundleOrFail()->getQuantity());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenNoItemsWithSalesConfiguredBundleProvided(): void
     {
         // Arrange
@@ -111,9 +105,6 @@ class MergeConfigurableBundleProductsCartReorderItemsTest extends Unit
         $this->assertCount(2, $cartReorderTransfer->getOrderOrFail()->getItems());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenItemsWithSalesConfiguredBundleNotRequestedInCartReorderRequestTransfer(): void
     {
         // Arrange
@@ -250,11 +241,6 @@ class MergeConfigurableBundleProductsCartReorderItemsTest extends Unit
         ];
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createOrderItemTransfer(int $idSalesOrderItem): ItemTransfer
     {
         return (new ItemBuilder([

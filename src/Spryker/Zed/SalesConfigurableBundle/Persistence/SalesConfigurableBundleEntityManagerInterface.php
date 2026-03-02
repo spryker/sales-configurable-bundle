@@ -12,29 +12,14 @@ use Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer;
 
 interface SalesConfigurableBundleEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer
-     */
     public function createSalesOrderConfiguredBundle(
         SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
     ): SalesOrderConfiguredBundleTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer
-     */
     public function createSalesOrderConfiguredBundleItem(
         SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
     ): SalesOrderConfiguredBundleItemTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer
-     */
     public function saveSalesOrderConfiguredBundleItemByFkSalesOrderItem(
         SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
     ): SalesOrderConfiguredBundleItemTransfer;

@@ -21,9 +21,6 @@ use Spryker\Zed\SalesConfigurableBundle\SalesConfigurableBundleDependencyProvide
  */
 class SalesConfigurableBundleCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Communication\Adder\FlashMessageAdderInterface
-     */
     public function createFlashMessageAdder(): FlashMessageAdderInterface
     {
         return new FlashMessageAdder(
@@ -31,9 +28,6 @@ class SalesConfigurableBundleCommunicationFactory extends AbstractCommunicationF
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Dependency\Facade\SalesConfigurableBundleToMessengerFacadeInterface
-     */
     public function getMessengerFacade(): SalesConfigurableBundleToMessengerFacadeInterface
     {
         return $this->getProvidedDependency(SalesConfigurableBundleDependencyProvider::FACADE_MESSENGER);

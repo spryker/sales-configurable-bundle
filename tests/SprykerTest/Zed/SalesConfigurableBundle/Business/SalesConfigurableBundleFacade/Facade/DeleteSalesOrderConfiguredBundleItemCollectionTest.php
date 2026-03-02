@@ -35,9 +35,6 @@ class DeleteSalesOrderConfiguredBundleItemCollectionTest extends Unit
      */
     protected SalesConfigurableBundleBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class DeleteSalesOrderConfiguredBundleItemCollectionTest extends Unit
         $this->tester->ensureSalesOrderConfiguredBundleItemDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderConfiguredBundlesEntities(): void
     {
         // Arrange
@@ -68,9 +62,6 @@ class DeleteSalesOrderConfiguredBundleItemCollectionTest extends Unit
         $this->assertSame(0, $this->tester->getSalesOrderConfiguredBundleItemQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotDeleteSalesOrderConfiguredBundleEntitiesWhenNoEntitiesFoundBySalesOrderItemIds(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class DeleteSalesOrderConfiguredBundleItemCollectionTest extends Unit
         $this->assertSame(1, $this->tester->getSalesOrderConfiguredBundleItemQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteSalesOrderConfiguredBundleItemEntitiesWhenNoCriteriaConditionsAreSet(): void
     {
         // Arrange

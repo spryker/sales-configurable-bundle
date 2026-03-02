@@ -18,11 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class SalesConfigurableBundleEntityManager extends AbstractEntityManager implements SalesConfigurableBundleEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer
-     */
     public function createSalesOrderConfiguredBundle(
         SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
     ): SalesOrderConfiguredBundleTransfer {
@@ -39,11 +34,6 @@ class SalesConfigurableBundleEntityManager extends AbstractEntityManager impleme
         return $salesOrderConfiguredBundleTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer
-     */
     public function createSalesOrderConfiguredBundleItem(
         SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
     ): SalesOrderConfiguredBundleItemTransfer {
@@ -64,11 +54,6 @@ class SalesConfigurableBundleEntityManager extends AbstractEntityManager impleme
         return $salesOrderConfiguredBundleItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer
-     */
     public function saveSalesOrderConfiguredBundleItemByFkSalesOrderItem(
         SalesOrderConfiguredBundleItemTransfer $salesOrderConfiguredBundleItemTransfer
     ): SalesOrderConfiguredBundleItemTransfer {

@@ -82,9 +82,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -92,9 +89,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->tester->configureTestStateMachine([BusinessHelper::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testSalesOrderConfiguredBundleCollectionByFilterRetrievesSalesOrderConfiguredBundlesByTemplateUuid(): void
     {
         // Arrange
@@ -121,9 +115,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->assertSame(static::FAKE_CONFIGURABLE_BUNDLE_UUID_1, $salesOrderConfiguredBundleTransfer->getConfigurableBundleTemplateUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testSalesOrderConfiguredBundleCollectionByFilterRetrievesSalesOrderConfiguredBundlesByTemplateSlotUuid(): void
     {
         // Arrange
@@ -153,9 +144,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSalesOrderConfiguredBundleCollectionByFilterRetrievesSalesOrderConfiguredBundlesBySalesOrderItemIds(): void
     {
         // Arrange
@@ -184,9 +172,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->assertCount(2, $salesOrderConfiguredBundleCollection->getSalesOrderConfiguredBundles());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteCopiesConfiguredBundlesFromQuoteToNewOrder(): void
     {
         // Arrange
@@ -209,9 +194,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->assertCount(3, $salesOrderConfiguredBundleCollection->getSalesOrderConfiguredBundles()->offsetGet(0)->getSalesOrderConfiguredBundleItems());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenIdSalesOrderItemNotProvided(): void
     {
         // Arrange
@@ -226,9 +208,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenGroupKeyNotProvided(): void
     {
         // Arrange
@@ -259,9 +238,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenQuantityNotProvided(): void
     {
         // Arrange
@@ -293,9 +269,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenTemplateNotProvided(): void
     {
         // Arrange
@@ -327,9 +300,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenTemplateUuidNotProvided(): void
     {
         // Arrange
@@ -360,9 +330,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenTemplateNameNotProvided(): void
     {
         // Arrange
@@ -395,9 +362,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenSlotNotProvided(): void
     {
         // Arrange
@@ -428,9 +392,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderConfiguredBundlesFromQuoteThrowsExceptionWhenSlotUuidNotProvided(): void
     {
         // Arrange
@@ -461,9 +422,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->saveSalesOrderConfiguredBundlesFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderWithConfiguredBundlesToOrderExpandsItemInOrderByConfiguredBundle(): void
     {
         // Arrange
@@ -490,9 +448,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderWithConfiguredBundlesWithoutConfiguredBundle(): void
     {
         // Arrange
@@ -546,9 +501,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->assertCount($itemQuantity, $itemCollectionTransfer->getItems());
     }
 
-    /**
-     * @return array
-     */
     public function transformConfigurableBundleItemDataProvider(): array
     {
         return [
@@ -559,9 +511,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         ];
     }
 
-    /**
-     * @return void
-     */
     public function testExpandItemsWithSalesOrderConfiguredBundlesWithConfiguredBundle(): void
     {
         // Arrange
@@ -587,9 +536,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExpandItemsWithSalesOrderConfiguredBundlesWithoutConfiguredBundle(): void
     {
         // Arrange
@@ -620,13 +566,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         $this->assertNull($itemTransfers[0]->getSalesOrderConfiguredBundle());
     }
 
-    /**
-     * @param int $quantity
-     * @param int $configurableBundleQuantity
-     * @param int $quantityPerSlot
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createConfigurableBundleItem(
         int $quantity = 1,
         int $configurableBundleQuantity = 1,
@@ -649,9 +588,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
         return $itemTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function getFakeQuoteWithConfiguredBundleItems(): QuoteTransfer
     {
         $firstGroupKey = uniqid('', true);
@@ -702,12 +638,6 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->build();
     }
 
-    /**
-     * @param string|null $templateUuid
-     * @param string|null $groupKey
-     *
-     * @return \Generated\Shared\Transfer\ConfiguredBundleTransfer
-     */
     protected function createConfiguredBundle(?string $templateUuid = null, ?string $groupKey = null): ConfiguredBundleTransfer
     {
         return (new ConfiguredBundleBuilder())->build()
@@ -715,22 +645,12 @@ class SalesConfigurableBundleFacadeTest extends Unit
             ->setGroupKey($groupKey);
     }
 
-    /**
-     * @param string|null $slotUuid
-     *
-     * @return \Generated\Shared\Transfer\ConfiguredBundleItemTransfer
-     */
     protected function createConfiguredBundleItem(?string $slotUuid = null): ConfiguredBundleItemTransfer
     {
         return (new ConfiguredBundleItemTransfer())
             ->setSlot((new ConfigurableBundleTemplateSlotTransfer())->setUuid($slotUuid));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function translateTemplateNamesForQuote(QuoteTransfer $quoteTransfer): void
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {

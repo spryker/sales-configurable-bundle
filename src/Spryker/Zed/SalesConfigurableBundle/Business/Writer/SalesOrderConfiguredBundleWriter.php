@@ -21,21 +21,12 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleEntityManagerInterface $salesConfigurableBundleEntityManager
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
-     */
     public function __construct(
         protected SalesConfigurableBundleEntityManagerInterface $salesConfigurableBundleEntityManager,
         protected SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderConfiguredBundlesFromQuote(QuoteTransfer $quoteTransfer): void
     {
         $salesOrderConfiguredBundleTransfers = $this->mapSalesOrderConfiguredBundles($quoteTransfer);
@@ -47,11 +38,6 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateSalesOrderConfiguredBundles(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer {
@@ -112,11 +98,6 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
         return $updatedSalesOrderConfiguredBundles;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
-     *
-     * @return void
-     */
     protected function saveSalesOrderConfiguredBundleItems(SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer): void
     {
         foreach ($salesOrderConfiguredBundleTransfer->getSalesOrderConfiguredBundleItems() as $salesOrderConfiguredBundleItemTransfer) {
@@ -125,11 +106,6 @@ class SalesOrderConfiguredBundleWriter implements SalesOrderConfiguredBundleWrit
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer
-     */
     protected function updateSalesOrderConfiguredBundleItems(
         SalesOrderConfiguredBundleTransfer $salesOrderConfiguredBundleTransfer
     ): SalesOrderConfiguredBundleTransfer {

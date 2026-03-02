@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\MessageTransfer;
 
 interface SalesConfigurableBundleToMessengerFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MessageTransfer $message
-     *
-     * @return void
-     */
     public function addInfoMessage(MessageTransfer $message): void;
 }

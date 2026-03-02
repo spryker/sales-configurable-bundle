@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionResponseTr
 
 interface SalesOrderConfiguredBundleItemDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionResponseTransfer
-     */
     public function deleteSalesOrderConfiguredBundleItemCollection(
         SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
     ): SalesOrderConfiguredBundleItemCollectionResponseTransfer;

@@ -29,10 +29,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
      */
     protected SalesConfigurableBundleToConfigurableBundleServiceInterface $configurableBundleService;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Business\Extractor\ConfigurableBundleItemExtractorInterface $configurableBundleItemExtractor
-     * @param \Spryker\Zed\SalesConfigurableBundle\Dependency\Service\SalesConfigurableBundleToConfigurableBundleServiceInterface $configurableBundleService
-     */
     public function __construct(
         ConfigurableBundleItemExtractorInterface $configurableBundleItemExtractor,
         SalesConfigurableBundleToConfigurableBundleServiceInterface $configurableBundleService
@@ -41,11 +37,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         $this->configurableBundleService = $configurableBundleService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrate(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         $itemsWithConfigurableBundle = $this->configurableBundleItemExtractor->extractItemsWithConfigurableBundle(
@@ -133,11 +124,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         return $indexedConfiguredBundleTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ConfiguredBundleTransfer
-     */
     protected function createConfiguredBundleTransfer(ItemTransfer $itemTransfer): ConfiguredBundleTransfer
     {
         $configuredBundleTransfer = (new ConfiguredBundleTransfer())
@@ -172,12 +158,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         return $reorderItemTransfer->setConfiguredBundle($reorderItemConfiguredBundleTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $reorderItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function addConfiguredBundleItem(ItemTransfer $itemTransfer, ItemTransfer $reorderItemTransfer): ItemTransfer
     {
         $configuredBundleItemTransfer = (new ConfiguredBundleItemTransfer())->setSlot(

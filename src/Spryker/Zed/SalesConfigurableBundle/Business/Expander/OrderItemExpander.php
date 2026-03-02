@@ -26,10 +26,6 @@ class OrderItemExpander implements OrderItemExpanderInterface
      */
     protected $glossaryFacade;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
-     * @param \Spryker\Zed\SalesConfigurableBundle\Dependency\Facade\SalesConfigurableBundleToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository,
         SalesConfigurableBundleToGlossaryFacadeInterface $glossaryFacade

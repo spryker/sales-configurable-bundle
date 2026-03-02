@@ -19,11 +19,6 @@ interface SalesConfigurableBundleRepositoryInterface
      */
     public function getSalesOrderConfiguredBundleIdsBySalesOrderItemIds(array $salesOrderItemIds): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleCollectionTransfer
-     */
     public function getSalesOrderConfiguredBundleCollectionByFilter(
         SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer
     ): SalesOrderConfiguredBundleCollectionTransfer;

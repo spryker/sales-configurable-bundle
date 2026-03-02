@@ -51,9 +51,6 @@ class HydrateCartReorderItemsWithConfigurableBundleTest extends Unit
      */
     protected SalesConfigurableBundleBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldAddReorderItemsWithConfigurableBundleDataWhenItemWasNotAddedToReorderItems(): void
     {
         // Arrange
@@ -105,9 +102,6 @@ class HydrateCartReorderItemsWithConfigurableBundleTest extends Unit
         $this->assertSame($orderItemTransfers[1]->getQuantityOrFail(), $reorderItemTransfer->getQuantity());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAddConfigurableBundleDataToReorderItemWhenItemWasPreviouslyAddedToReorderItems(): void
     {
         // Arrange
@@ -161,9 +155,6 @@ class HydrateCartReorderItemsWithConfigurableBundleTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenNoItemsWithConfigurableBundleProvided(): void
     {
         // Arrange

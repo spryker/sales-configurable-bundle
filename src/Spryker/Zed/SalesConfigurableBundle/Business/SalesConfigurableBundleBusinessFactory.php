@@ -35,9 +35,6 @@ use Spryker\Zed\SalesConfigurableBundle\SalesConfigurableBundleDependencyProvide
  */
 class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Writer\SalesOrderConfiguredBundleWriterInterface
-     */
     public function createSalesOrderConfiguredBundleWriter(): SalesOrderConfiguredBundleWriterInterface
     {
         return new SalesOrderConfiguredBundleWriter(
@@ -46,9 +43,6 @@ class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Expander\SalesOrderConfiguredBundleExpanderInterface
-     */
     public function createSalesOrderConfiguredBundleExpander(): SalesOrderConfiguredBundleExpanderInterface
     {
         return new SalesOrderConfiguredBundleExpander(
@@ -57,17 +51,11 @@ class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Transformer\ConfigurableBundleItemTransformerInterface
-     */
     public function createConfigurableBundleItemTransformer(): ConfigurableBundleItemTransformerInterface
     {
         return new ConfigurableBundleItemTransformer();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Expander\OrderItemExpanderInterface
-     */
     public function createOrderItemExpander(): OrderItemExpanderInterface
     {
         return new OrderItemExpander(
@@ -76,17 +64,11 @@ class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Merger\CartReorderItemMergerInterface
-     */
     public function createCartReorderItemMerger(): CartReorderItemMergerInterface
     {
         return new CartReorderItemMerger($this->createConfigurableBundleItemExtractor());
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Hydrator\CartReorderItemHydratorInterface
-     */
     public function createCartReorderItemHydrator(): CartReorderItemHydratorInterface
     {
         return new CartReorderItemHydrator(
@@ -95,17 +77,11 @@ class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Extractor\ConfigurableBundleItemExtractorInterface
-     */
     public function createConfigurableBundleItemExtractor(): ConfigurableBundleItemExtractorInterface
     {
         return new ConfigurableBundleItemExtractor();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Business\Deleter\SalesOrderConfiguredBundleItemDeleterInterface
-     */
     public function createSalesOrderConfiguredBundleItemDeleter(): SalesOrderConfiguredBundleItemDeleterInterface
     {
         return new SalesOrderConfiguredBundleItemDeleter(
@@ -114,17 +90,11 @@ class SalesConfigurableBundleBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Dependency\Facade\SalesConfigurableBundleToGlossaryFacadeInterface
-     */
     protected function getGlossaryFacade(): SalesConfigurableBundleToGlossaryFacadeInterface
     {
         return $this->getProvidedDependency(SalesConfigurableBundleDependencyProvider::FACADE_GLOSSARY);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Dependency\Service\SalesConfigurableBundleToConfigurableBundleServiceInterface
-     */
     public function getConfigurableBundleService(): SalesConfigurableBundleToConfigurableBundleServiceInterface
     {
         return $this->getProvidedDependency(SalesConfigurableBundleDependencyProvider::SERVICE_CONFIGURABLE_BUNDLE);

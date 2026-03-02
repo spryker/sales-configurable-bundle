@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface FlashMessageAdderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function addInfoMessage(OrderTransfer $orderTransfer): void;
 }

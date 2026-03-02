@@ -18,11 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class SalesConfigurableBundleRepository extends AbstractRepository implements SalesConfigurableBundleRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleCollectionTransfer
-     */
     public function getSalesOrderConfiguredBundleCollectionByFilter(
         SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer
     ): SalesOrderConfiguredBundleCollectionTransfer {
@@ -59,12 +54,6 @@ class SalesConfigurableBundleRepository extends AbstractRepository implements Sa
         return $salesOrderConfiguredBundleCollection->toArray();
     }
 
-    /**
-     * @param \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleQuery $salesOrderConfiguredBundleQuery
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer
-     *
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleQuery
-     */
     protected function setSalesOrderConfiguredBundleFilters(
         SpySalesOrderConfiguredBundleQuery $salesOrderConfiguredBundleQuery,
         SalesOrderConfiguredBundleFilterTransfer $salesOrderConfiguredBundleFilterTransfer

@@ -39,9 +39,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
      */
     protected SalesConfigurableBundleCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
         $this->tester->ensureSalesOrderConfiguredBundleItemDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotUpdateAnySalesOrderConfiguredBundles(): void
     {
         // Arrange
@@ -68,9 +62,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
         $this->assertSame(0, $this->tester->getSalesOrderConfiguredBundleItemQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateSalesOrderConfiguredBundle(): void
     {
         // Arrange
@@ -85,9 +76,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
         $this->assertSalesOrderConfiguredBundleEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateSalesOrderConfiguredBundle(): void
     {
         // Arrange
@@ -110,9 +98,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
         $this->assertSalesOrderConfiguredBundleEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenIdSalesOrderItemIsNotSet(): void
     {
         // Arrange
@@ -130,11 +115,6 @@ class SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePluginTest extends
         (new SalesConfiguredBundlesSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertSalesOrderConfiguredBundleEntity(QuoteTransfer $quoteTransfer): void
     {
         /** @var \Generated\Shared\Transfer\ItemTransfer $itemTransfer */

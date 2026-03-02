@@ -17,21 +17,12 @@ class SalesOrderConfiguredBundleItemDeleter implements SalesOrderConfiguredBundl
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleEntityManagerInterface $salesConfigurableBundleEntityManager
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
-     */
     public function __construct(
         protected SalesConfigurableBundleEntityManagerInterface $salesConfigurableBundleEntityManager,
         protected SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionResponseTransfer
-     */
     public function deleteSalesOrderConfiguredBundleItemCollection(
         SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
     ): SalesOrderConfiguredBundleItemCollectionResponseTransfer {
@@ -42,11 +33,6 @@ class SalesOrderConfiguredBundleItemDeleter implements SalesOrderConfiguredBundl
         return new SalesOrderConfiguredBundleItemCollectionResponseTransfer();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
-     *
-     * @return void
-     */
     protected function executeDeleteSalesOrderConfiguredBundleItemCollectionTransaction(
         SalesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer $salesOrderConfiguredBundleItemCollectionDeleteCriteriaTransfer
     ): void {

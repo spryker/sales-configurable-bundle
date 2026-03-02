@@ -15,11 +15,6 @@ use Generated\Shared\Transfer\ProductOptionTransfer;
 
 class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransformerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function transformConfiguredBundleOrderItems(OrderTransfer $orderTransfer): OrderTransfer
     {
         $transformedOrderItems = [];
@@ -54,12 +49,6 @@ class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransfo
         return $configurableBundleItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $groupKeyIndex
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function transformItemTransfer(ItemTransfer $itemTransfer, int $groupKeyIndex): ItemTransfer
     {
         $transformedItemTransfer = (new ItemTransfer())
@@ -72,12 +61,6 @@ class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransfo
         return $transformedItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $groupKeyIndex
-     *
-     * @return \Generated\Shared\Transfer\ConfiguredBundleTransfer
-     */
     protected function transformConfiguredBundleTransfer(ItemTransfer $itemTransfer, int $groupKeyIndex): ConfiguredBundleTransfer
     {
         return (new ConfiguredBundleTransfer())
@@ -86,12 +69,6 @@ class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransfo
             ->setGroupKey($this->generateTransformedGroupKey($itemTransfer, $groupKeyIndex));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $groupKeyIndex
-     *
-     * @return string
-     */
     protected function generateTransformedGroupKey(ItemTransfer $itemTransfer, int $groupKeyIndex): string
     {
         return sprintf(
@@ -101,12 +78,6 @@ class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransfo
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $transformedItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function transformProductOptions(ItemTransfer $transformedItemTransfer, ItemTransfer $itemTransfer): ItemTransfer
     {
         $transformedProductOptions = new ArrayObject();
@@ -121,12 +92,6 @@ class ConfigurableBundleItemTransformer implements ConfigurableBundleItemTransfo
         return $transformedItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOptionTransfer $productOptionTransfer
-     * @param int $itemQuantity
-     *
-     * @return \Generated\Shared\Transfer\ProductOptionTransfer
-     */
     protected function copyProductOptionTransfer(ProductOptionTransfer $productOptionTransfer, int $itemQuantity): ProductOptionTransfer
     {
         $transformedProductOptionTransfer = new ProductOptionTransfer();

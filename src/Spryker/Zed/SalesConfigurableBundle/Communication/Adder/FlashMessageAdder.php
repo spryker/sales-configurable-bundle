@@ -23,19 +23,11 @@ class FlashMessageAdder implements FlashMessageAdderInterface
      */
     protected SalesConfigurableBundleToMessengerFacadeInterface $messengerFacade;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Dependency\Facade\SalesConfigurableBundleToMessengerFacadeInterface $messengerFacade
-     */
     public function __construct(SalesConfigurableBundleToMessengerFacadeInterface $messengerFacade)
     {
         $this->messengerFacade = $messengerFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function addInfoMessage(OrderTransfer $orderTransfer): void
     {
         foreach ($orderTransfer->getItems() as $itemTransfer) {

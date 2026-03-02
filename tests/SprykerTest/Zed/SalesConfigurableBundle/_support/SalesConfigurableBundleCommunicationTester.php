@@ -45,9 +45,6 @@ class SalesConfigurableBundleCommunicationTester extends Actor
      */
     protected const DEFAULT_OMS_PROCESS_NAME = 'Test01';
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderConfiguredBundleItemDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -55,11 +52,6 @@ class SalesConfigurableBundleCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItem
-     */
     public function findSalesOrderConfiguredBundleItem(int $idSalesOrderItem): SpySalesOrderConfiguredBundleItem
     {
         return $this->getSalesOrderConfiguredBundleItemQuery()
@@ -67,25 +59,16 @@ class SalesConfigurableBundleCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItemQuery
-     */
     public function getSalesOrderConfiguredBundleItemQuery(): SpySalesOrderConfiguredBundleItemQuery
     {
         return SpySalesOrderConfiguredBundleItemQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleQuery
-     */
     public function getSalesOrderConfiguredBundleQuery(): SpySalesOrderConfiguredBundleQuery
     {
         return SpySalesOrderConfiguredBundleQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundle
-     */
     public function createSalesOrderConfiguredBundle(): SpySalesOrderConfiguredBundle
     {
         $salesOrderConfiguredBundleEntity = (new SpySalesOrderConfiguredBundle())
@@ -96,12 +79,6 @@ class SalesConfigurableBundleCommunicationTester extends Actor
         return $salesOrderConfiguredBundleEntity;
     }
 
-    /**
-     * @param int $idSalesOrderConfiguredBundle
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItem
-     */
     public function createSalesOrderConfiguredBundleItem(
         int $idSalesOrderConfiguredBundle,
         int $idSalesOrderItem
@@ -123,11 +100,6 @@ class SalesConfigurableBundleCommunicationTester extends Actor
         return $this->getSalesOrderConfiguredBundleItemQuery()->find();
     }
 
-    /**
-     * @param bool|null $withConfiguredBundle
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createOrder(?bool $withConfiguredBundle = false): QuoteTransfer
     {
         $quoteTransfer = (new QuoteBuilder())

@@ -45,9 +45,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
      */
     protected SalesConfigurableBundleCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function _after(): void
     {
         parent::_after();
@@ -55,9 +52,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
         $this->cleanStaticProperty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAddInfoMessageToMessenger(): void
     {
         // Arrange
@@ -80,9 +74,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
         $this->assertSame(static::GLOSSARY_KEY_CONFIGURED_BUNDLE_ITEMS_ADDED_TO_CART_SUCCESS, $infoMessages[0]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotAddInfoMessageToMessenger(): void
     {
         // Arrange
@@ -101,9 +92,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
         $this->assertEmpty($this->getInfoMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueException(): void
     {
         // Assert
@@ -121,9 +109,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
         return $this->tester->getLocator()->messenger()->facade()->getStoredMessages()->getInfoMessages();
     }
 
-    /**
-     * @return void
-     */
     protected function cleanStaticProperty(): void
     {
         $reflectedClass = new ReflectionClass(InMemoryMessageTray::class);

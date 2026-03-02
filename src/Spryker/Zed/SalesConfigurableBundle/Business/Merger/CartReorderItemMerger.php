@@ -20,20 +20,11 @@ class CartReorderItemMerger implements CartReorderItemMergerInterface
      */
     protected ConfigurableBundleItemExtractorInterface $configurableBundleItemExtractor;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Business\Extractor\ConfigurableBundleItemExtractorInterface $configurableBundleItemExtractor
-     */
     public function __construct(ConfigurableBundleItemExtractorInterface $configurableBundleItemExtractor)
     {
         $this->configurableBundleItemExtractor = $configurableBundleItemExtractor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function mergeConfigurableBundleItems(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderTransfer $cartReorderTransfer

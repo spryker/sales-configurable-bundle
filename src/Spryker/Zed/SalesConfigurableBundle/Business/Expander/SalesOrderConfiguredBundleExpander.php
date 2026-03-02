@@ -29,10 +29,6 @@ class SalesOrderConfiguredBundleExpander implements SalesOrderConfiguredBundleEx
      */
     protected $glossaryFacade;
 
-    /**
-     * @param \Spryker\Zed\SalesConfigurableBundle\Persistence\SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository
-     * @param \Spryker\Zed\SalesConfigurableBundle\Dependency\Facade\SalesConfigurableBundleToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(
         SalesConfigurableBundleRepositoryInterface $salesConfigurableBundleRepository,
         SalesConfigurableBundleToGlossaryFacadeInterface $glossaryFacade
@@ -41,11 +37,6 @@ class SalesOrderConfiguredBundleExpander implements SalesOrderConfiguredBundleEx
         $this->glossaryFacade = $glossaryFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expandOrderWithConfiguredBundles(OrderTransfer $orderTransfer): OrderTransfer
     {
         $salesOrderItemIds = $this->getSalesOrderItemIdsFromOrder($orderTransfer);

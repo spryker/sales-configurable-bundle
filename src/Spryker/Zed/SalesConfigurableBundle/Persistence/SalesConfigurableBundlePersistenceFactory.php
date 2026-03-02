@@ -19,25 +19,16 @@ use Spryker\Zed\SalesConfigurableBundle\Persistence\Propel\Mapper\SalesOrderConf
  */
 class SalesConfigurableBundlePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleQuery
-     */
     public function getSalesOrderConfiguredBundlePropelQuery(): SpySalesOrderConfiguredBundleQuery
     {
         return SpySalesOrderConfiguredBundleQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItemQuery
-     */
     public function getSalesOrderConfiguredBundleItemPropelQuery(): SpySalesOrderConfiguredBundleItemQuery
     {
         return SpySalesOrderConfiguredBundleItemQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesConfigurableBundle\Persistence\Propel\Mapper\SalesOrderConfiguredBundleMapper
-     */
     public function createSalesOrderConfiguredBundleMapper(): SalesOrderConfiguredBundleMapper
     {
         return new SalesOrderConfiguredBundleMapper();

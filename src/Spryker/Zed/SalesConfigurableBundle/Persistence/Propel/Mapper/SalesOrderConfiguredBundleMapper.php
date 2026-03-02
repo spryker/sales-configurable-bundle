@@ -17,11 +17,6 @@ use Propel\Runtime\Collection\Collection;
 
 class SalesOrderConfiguredBundleMapper
 {
-    /**
-     * @param \Propel\Runtime\Collection\Collection $bundleEntities
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleCollectionTransfer
-     */
     public function mapBundleEntityCollectionToBundleTransferCollection(
         Collection $bundleEntities
     ): SalesOrderConfiguredBundleCollectionTransfer {
@@ -38,12 +33,6 @@ class SalesOrderConfiguredBundleMapper
         return $bundleCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $bundleTransfer
-     * @param \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundle $bundleEntity
-     *
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundle
-     */
     public function mapBundleTransferToBundleEntity(
         SalesOrderConfiguredBundleTransfer $bundleTransfer,
         SpySalesOrderConfiguredBundle $bundleEntity
@@ -53,12 +42,6 @@ class SalesOrderConfiguredBundleMapper
         return $bundleEntity;
     }
 
-    /**
-     * @param \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundle $bundleEntity
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer $bundleTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleTransfer
-     */
     public function mapBundleEntityToBundleTransfer(
         SpySalesOrderConfiguredBundle $bundleEntity,
         SalesOrderConfiguredBundleTransfer $bundleTransfer
@@ -72,12 +55,6 @@ class SalesOrderConfiguredBundleMapper
         return $bundleTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $bundleItemTransfer
-     * @param \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItem $bundleItemEntity
-     *
-     * @return \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItem
-     */
     public function mapBundleItemTransferToBundleItemEntity(
         SalesOrderConfiguredBundleItemTransfer $bundleItemTransfer,
         SpySalesOrderConfiguredBundleItem $bundleItemEntity
@@ -91,12 +68,6 @@ class SalesOrderConfiguredBundleMapper
         return $bundleItemEntity;
     }
 
-    /**
-     * @param \Orm\Zed\SalesConfigurableBundle\Persistence\SpySalesOrderConfiguredBundleItem $bundleItemEntity
-     * @param \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer $bundleItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderConfiguredBundleItemTransfer
-     */
     public function mapBundleItemEntityToBundleItemTransfer(
         SpySalesOrderConfiguredBundleItem $bundleItemEntity,
         SalesOrderConfiguredBundleItemTransfer $bundleItemTransfer
