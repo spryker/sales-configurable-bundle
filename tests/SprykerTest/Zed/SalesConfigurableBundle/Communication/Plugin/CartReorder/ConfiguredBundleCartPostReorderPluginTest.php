@@ -45,6 +45,13 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
      */
     protected SalesConfigurableBundleCommunicationTester $tester;
 
+    protected function _setUp(): void
+    {
+        parent::_setUp();
+
+        $this->cleanStaticProperty();
+    }
+
     protected function _after(): void
     {
         parent::_after();
