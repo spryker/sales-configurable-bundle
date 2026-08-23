@@ -121,7 +121,6 @@ class ConfiguredBundleCartPostReorderPluginTest extends Unit
         $reflectedClass = new ReflectionClass(InMemoryMessageTray::class);
 
         $messages = $reflectedClass->getProperty('messages');
-        $messages->setAccessible(true);
         $messages->setValue(null);
     }
 }
